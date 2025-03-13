@@ -1,3 +1,3 @@
-## 1.0.1
+## 1.0.2
 
-- Changed the metadata
+- Improved the example screen
