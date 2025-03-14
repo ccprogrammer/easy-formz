@@ -1,3 +1,3 @@
-## 1.0.2
+## 1.0.3
 
-- Improved the example screen
+- Changed the homepage url

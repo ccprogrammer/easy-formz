@@ -1,7 +1,7 @@
 name: easy_formz
 description: "Flutter plugin for easier form generator handling."
-version: 1.0.2
-homepage: https://www.ccprogrammer.com/
+version: 1.0.3
+homepage: https://github.com/ccprogrammer/easy-formz
 
 environment:
   sdk: ^3.7.0
