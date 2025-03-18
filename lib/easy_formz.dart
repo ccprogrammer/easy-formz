@@ -1,20 +1,20 @@
 library;
 
 // Controllers
-export 'package:easy_formz/controller/easy_formz_controller.dart';
+export 'controller/easy_formz_controller.dart';
 
 // Functions
-export 'package:easy_formz/functions/date_converter.dart';
+export 'functions/date_converter.dart';
 
 // Themes
-export 'package:easy_formz/themes/easy_formz_theme.dart';
+export 'themes/easy_formz_theme.dart';
 
 // Models
-export 'package:easy_formz/models/form_config.dart';
-export 'package:easy_formz/models/form_option.dart';
-export 'package:easy_formz/models/form_page.dart';
-export 'package:easy_formz/models/form_props.dart';
-export 'package:easy_formz/models/form_value.dart';
+export 'models/form_config.dart';
+export 'models/form_option.dart';
+export 'models/form_page.dart';
+export 'models/form_props.dart';
+export 'models/form_value.dart';
 
 // Widgets
 export 'easy_formz_builder.dart';
