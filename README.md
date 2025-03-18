@@ -1,8 +1,8 @@
-## Flutter EasyFormz Package
+### EasyFormz Package
 
 The purpose of this package is to facilitate the creation of dynamic forms based on data received from the server. The package provides several basic components, including form types such as 'input', 'textarea', 'dropdown', 'checkbox', 'multicheckbox', 'radio', 'date', and 'time'. Additionally, users have the flexibility to create custom forms if none of the predefined form types suit their needs.
 
-### Available Form Types
+## Available Form Types
 
 1. **Input**: Single-line text input.
 2. **Textarea**: Multi-line text input.
@@ -15,7 +15,7 @@ The purpose of this package is to facilitate the creation of dynamic forms based
 
 ## Using the EasyFormz Widget
 
-To integrate the dynamic form into your Flutter application, follow these steps:
+To integrate the package into your Flutter application, follow these steps:
 
 1. Add the `EasyFormz` widget to your widget tree:
 
