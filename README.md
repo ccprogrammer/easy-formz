@@ -2,8 +2,7 @@
 
 The purpose of this package is to facilitate the creation of dynamic forms based on data received from the server. The package provides several basic components, including form types such as 'input', 'textarea', 'dropdown', 'checkbox', 'multicheckbox', 'radio', 'date', and 'time'. Additionally, users have the flexibility to create custom forms if none of the predefined form types suit their needs.
 
-
-![The example app running in iOS](https://github.com/ccprogrammer/easy-formz/raw/main/lib/assets/easy-formz-video.gif?raw=true)
+<img src="https://github.com/ccprogrammer/easy-formz/raw/main/lib/assets/easy-formz-video.gif?raw=true" alt="The example app running in iOS"  width="100%" />
 
 
 ## Available Form Types
