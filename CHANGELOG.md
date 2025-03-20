@@ -1,3 +1,3 @@
-## 1.0.3
+## 1.0.4
 
-- Changed the homepage url
+- Added Example Video
