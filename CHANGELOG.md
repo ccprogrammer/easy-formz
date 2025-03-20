@@ -1,3 +1,3 @@
-## 1.0.4
+## 1.0.5
 
-- Added Example Video
+- Added Example Gif
