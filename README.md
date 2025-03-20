@@ -2,6 +2,10 @@
 
 The purpose of this package is to facilitate the creation of dynamic forms based on data received from the server. The package provides several basic components, including form types such as 'input', 'textarea', 'dropdown', 'checkbox', 'multicheckbox', 'radio', 'date', and 'time'. Additionally, users have the flexibility to create custom forms if none of the predefined form types suit their needs.
 
+
+https://github.com/user-attachments/assets/fcf5c67f-e823-4f72-b4d6-31638f5a2248
+
+
 ## Available Form Types
 
 1. **Input**: Single-line text input.
