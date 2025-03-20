@@ -1,4 +1,5 @@
-import 'package:easy_formz/models/form_option.dart';
+import 'package:easy_formz/easy_formz.dart';
+
 
 class FormProps {
   final bool? isRequired;

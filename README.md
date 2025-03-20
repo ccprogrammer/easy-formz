@@ -4,7 +4,6 @@ The purpose of this package is to facilitate the creation of dynamic forms based
 
 <img src="https://github.com/ccprogrammer/easy-formz/raw/main/lib/assets/easy-formz-video.gif?raw=true" alt="The example app running in iOS"  width="100%" />
 
-
 ## Available Form Types
 
 1. **Input**: Single-line text input.
@@ -29,19 +28,12 @@ To integrate the package into your Flutter application, follow these steps:
 2. Initialize the form controller with the desired form data & Keep your UI in sync by listening to changes on the form controller. Example:
 
    ```dart
-    late final EasyFormzController controller;
+    late final EasyFormzController controller = EasyFormzController(forms: widget.form.formConfigs);
 
     @override
-    void initState() {
-    super.initState();
-
-    controller = EasyFormzController(
-      forms: forms,
-    )..addListener(() {
-        setState(() {});
-      });
+    Widget build(BuildContext context) {
+      return Scaffold();
     }
-
    ```
 
    The forms data should be look like this
@@ -188,7 +180,7 @@ To integrate the package into your Flutter application, follow these steps:
 
    ```dart
     late final EasyFormzController controller;
-    
+
     @override
     void initState() {
     super.initState();
@@ -199,7 +191,7 @@ To integrate the package into your Flutter application, follow these steps:
         });
 
     }
-    ```
+   ```
 
 ## Custom Form Creation
 

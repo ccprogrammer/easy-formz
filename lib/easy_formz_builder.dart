@@ -1,23 +1,10 @@
-import 'package:easy_formz/controller/easy_formz_controller.dart';
-import 'package:easy_formz/themes/easy_formz_theme.dart';
-import 'package:flutter/material.dart';
-
-import 'package:easy_formz/models/form_config.dart';
-import 'package:easy_formz/widgets/form_textarea.dart';
-
-import 'widgets/form_checkbox.dart';
-import 'widgets/form_date.dart';
-import 'widgets/form_dropdown.dart';
-import 'widgets/form_multicheckbox.dart';
-import 'widgets/form_radio.dart';
-import 'widgets/form_textbox.dart';
-import 'widgets/form_time.dart';
+import 'package:easy_formz/easy_formz.dart';
 
 class EasyFormz extends StatefulWidget {
-  const EasyFormz({
+  EasyFormz({
     super.key,
     required this.controller,
-    this.theme,
+    EasyFormzTheme? theme,
     this.onFormValuesChanged,
     this.customBuilder,
     this.inputBuilder,
@@ -29,9 +16,10 @@ class EasyFormz extends StatefulWidget {
     this.dateBuilder,
     this.timeBuilder,
     this.errorBuilder,
-  });
+  }) : theme = theme ?? EasyFormzTheme();
+
   final EasyFormzController controller;
-  final EasyFormzTheme? theme;
+  final EasyFormzTheme theme;
 
   final Function(FormConfig config, dynamic value)? onFormValuesChanged;
   final Function(FormConfig config, Function(dynamic value) onValueChanged)?
@@ -60,18 +48,32 @@ class EasyFormz extends StatefulWidget {
 }
 
 class _EasyFormzState extends State<EasyFormz> {
-  EasyFormzTheme get theme => widget.theme ?? EasyFormzTheme();
-  List<FormConfig> get forms => widget.controller.forms;
-  EasyFormzController get controller => widget.controller;
+  @override
+  void initState() {
+    widget.controller.addListener(_istener);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(_istener);
+    super.dispose();
+  }
+
+  void _istener() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: forms.length,
+      itemCount: widget.controller.forms.length,
       itemBuilder: (context, index) {
-        final FormConfig config = forms[index];
+        final FormConfig config = widget.controller.forms[index];
 
         if (config.isHidden) return const SizedBox.shrink();
 
@@ -87,7 +89,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormTextBox(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'textarea':
@@ -99,7 +101,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormTextArea(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'dropdown':
@@ -111,7 +113,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormDropdown(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'checkbox':
@@ -123,7 +125,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormCheckbox(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'multicheckbox':
@@ -135,7 +137,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormMultiCheckbox(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'radio':
@@ -144,7 +146,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormRadio(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'date':
@@ -153,7 +155,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormDate(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
           case 'time':
@@ -162,7 +164,7 @@ class _EasyFormzState extends State<EasyFormz> {
             }
             return FormTime(
               config: config,
-              theme: theme,
+              theme: widget.theme,
               onChanged: (value) => onChanged(value),
             );
         }

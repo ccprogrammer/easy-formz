@@ -1,3 +1,4 @@
-## 1.0.5
+## 1.1.0
 
-- Added Example Gif
+- Controller doesn't need addListener anymore
+- Optimized dependencies sorting

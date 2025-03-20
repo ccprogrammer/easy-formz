@@ -1,4 +1,4 @@
-import 'package:easy_formz/models/form_config.dart';
+import 'package:easy_formz/easy_formz.dart';
 
 class FormPage {
   final String id;

@@ -1,10 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:easy_formz/functions/date_converter.dart';
-import 'package:flutter/material.dart';
-import 'package:easy_formz/models/form_config.dart';
-import 'package:easy_formz/themes/easy_formz_theme.dart';
-import 'package:easy_formz/widgets/form_label.dart';
-import 'package:easy_formz/widgets/form_warning_label.dart';
+import 'package:easy_formz/easy_formz.dart';
 
 class FormTime extends StatelessWidget {
   FormTime({

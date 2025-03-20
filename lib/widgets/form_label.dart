@@ -1,5 +1,4 @@
-import 'package:easy_formz/themes/easy_formz_theme.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_formz/easy_formz.dart';
 
 class FormLabel extends StatelessWidget {
   const FormLabel({

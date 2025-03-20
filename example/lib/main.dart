@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
 import 'package:easy_formz/easy_formz.dart';
-
-import 'dart:math';
 
 void main() {
   runApp(const App());
@@ -77,17 +73,9 @@ class FormScreen extends StatefulWidget {
 }
 
 class _FormScreenState extends State<FormScreen> {
-  late final EasyFormzController controller;
-
-  @override
-  void initState() {
-    super.initState();
-
-    controller = EasyFormzController(forms: widget.form.formConfigs)
-      ..addListener(() {
-        setState(() {});
-      });
-  }
+  late final EasyFormzController controller = EasyFormzController(
+    forms: widget.form.formConfigs,
+  );
 
   @override
   Widget build(BuildContext context) {

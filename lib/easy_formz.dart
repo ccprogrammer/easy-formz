@@ -1,5 +1,9 @@
 library;
 
+export 'package:flutter/material.dart';
+
+export 'dart:math';
+
 // Controllers
 export 'controller/easy_formz_controller.dart';
 
@@ -27,3 +31,4 @@ export 'widgets/form_textarea.dart';
 export 'widgets/form_textbox.dart';
 export 'widgets/form_time.dart';
 export 'widgets/form_label.dart';
+export 'package:easy_formz/widgets/form_warning_label.dart';

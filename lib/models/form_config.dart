@@ -1,4 +1,4 @@
-import 'package:easy_formz/models/form_props.dart';
+import 'package:easy_formz/easy_formz.dart';
 
 class FormConfig {
   final String id;

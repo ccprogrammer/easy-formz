@@ -1,7 +1,4 @@
-import 'package:easy_formz/models/form_config.dart';
-import 'package:easy_formz/models/form_value.dart';
-import 'package:flutter/material.dart';
-
+import 'package:easy_formz/easy_formz.dart';
 class EasyFormzController extends ChangeNotifier {
   final List<FormConfig> forms;
   final List<FormValue> formValues = [];

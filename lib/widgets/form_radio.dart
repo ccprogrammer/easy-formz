@@ -1,8 +1,4 @@
-import 'package:easy_formz/models/form_config.dart';
-import 'package:easy_formz/themes/easy_formz_theme.dart';
-import 'package:easy_formz/widgets/form_label.dart';
-import 'package:easy_formz/widgets/form_warning_label.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_formz/easy_formz.dart';
 
 class FormRadio extends StatelessWidget {
    FormRadio({
