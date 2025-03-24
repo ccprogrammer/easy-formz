@@ -1,4 +1,3 @@
-## 1.1.0
+## 1.1.1
 
-- Controller doesn't need addListener anymore
-- Optimized dependencies sorting
+- Updated Readme.md

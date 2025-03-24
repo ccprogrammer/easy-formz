@@ -28,7 +28,7 @@ To integrate the package into your Flutter application, follow these steps:
 2. Initialize the form controller with the desired form data & Keep your UI in sync by listening to changes on the form controller. Example:
 
    ```dart
-    late final EasyFormzController controller = EasyFormzController(forms: widget.form.formConfigs);
+    late final EasyFormzController controller = EasyFormzController(forms: forms);
 
     @override
     Widget build(BuildContext context) {
@@ -179,17 +179,11 @@ To integrate the package into your Flutter application, follow these steps:
    Inside the FormScreen get the form parameter like the following example:
 
    ```dart
-    late final EasyFormzController controller;
+    late final EasyFormzController controller = EasyFormzController(forms: widget.form.formConfigs);
 
     @override
-    void initState() {
-    super.initState();
-
-        controller = EasyFormzController(forms: widget.form.formConfigs)
-        ..addListener(() {
-            setState(() {});
-        });
-
+    Widget build(BuildContext context) {
+      return Scaffold();
     }
    ```
 
