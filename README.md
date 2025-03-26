@@ -4,6 +4,18 @@ The purpose of this package is to facilitate the creation of dynamic forms based
 
 <img src="https://github.com/ccprogrammer/easy-formz/raw/main/lib/assets/easy-formz-video.gif?raw=true" alt="The example app running in iOS"  width="100%" />
 
+## Table of Contents
+
+- [Available Form Types](#available-form-types)
+- [Using the EasyFormz Widget](#using-the-easyformz-widget)
+- [Custom Form Creation](#custom-form-creation)
+  - [Basic Component Builder](#basic-component-builder)
+  - [Custom Form Component Builder](#custom-form-component-builder)
+  - [Custom Error Component Builder](#custom-error-component-builder)
+  - [Customizing the Easy Form Theme](#customizing-the-easy-form-theme)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Available Form Types
 
 1. **Input**: Single-line text input.
