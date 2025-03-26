@@ -257,23 +257,13 @@ EasyFormz(
 );
 ```
 
-### Customizing the Dynamic Form Theme
+### Customizing the Easy Form Theme
 
 To personalize the appearance of the dynamic form, you can modify the theme settings using the `theme` parameter. Below is an example of customizing the theme for a `EasyFormz`:
 
 ```dart
 EasyFormz(
   controller: controller,
-  theme: EasyFormzTheme(
-        borderColor: Colors.grey,
-        borderWidth: 1.5,
-        iconColor: Colors.black45,
-        iconSize: 24,
-        labelTextStyle: const TextStyle(),
-        optionTextStyle: const TextStyle(),
-        valueColor: Colors.green,
-        warningColor: Colors.red,
-        warningTextStyle: const TextStyle(),
-    )
+  theme: EasyFormzTheme()
 )
 ```
