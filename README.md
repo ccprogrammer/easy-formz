@@ -47,6 +47,20 @@ To integrate the package into your Flutter application, follow these steps:
       label: 'Test Form Input',
       props: FormProps(isRequired: true),
     ),
+     FormConfig(
+      id: '702',
+      type: 'dropdown',
+      formKey: 'dynamic_dropdown_key',
+      label: 'Test Form Dropdown',
+      props: FormProps(
+        isRequired: true,
+        options: [
+          FormOption(label: 'Option One', value: 'ONE'),
+          FormOption(label: 'Option Two', value: 'TWO'),
+          FormOption(label: 'Option Three', value: 'Three'),
+        ],
+      ),
+    ),
     FormConfig(
       id: '432',
       type: 'radio',
