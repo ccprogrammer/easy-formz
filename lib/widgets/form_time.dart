@@ -1,6 +1,10 @@
 import 'package:easy_formz/easy_formz.dart';
 
+/// A widget that displays a time picker form field.
 class FormTime extends StatelessWidget {
+  /// Creates a [FormTime] widget.
+  ///
+  /// The [config] and [onChanged] parameters are required.
   FormTime({
     super.key,
     required this.config,
@@ -8,8 +12,13 @@ class FormTime extends StatelessWidget {
     EasyFormzTheme? theme,
   }) : theme = theme ?? EasyFormzTheme();
 
+  /// The configuration for the form field.
   final FormConfig config;
+
+  /// The theme for the form field.
   final EasyFormzTheme theme;
+
+  /// Callback when the form field value changes.
   final Function(dynamic value) onChanged;
 
   @override
@@ -17,7 +26,7 @@ class FormTime extends StatelessWidget {
     final String selectedValue = config.value ?? '';
 
     DateTime? dateTime =
-        selectedValue.isNotEmpty ? convertTime(selectedValue) : null;
+        selectedValue.isNotEmpty ? _convertTime(selectedValue) : null;
 
     TimeOfDay timeOfDay =
         dateTime != null ? TimeOfDay.fromDateTime(dateTime) : TimeOfDay.now();
@@ -79,4 +88,22 @@ class FormTime extends StatelessWidget {
       ),
     );
   }
+}
+
+DateTime? _convertTime(String selectedValue) {
+  if (selectedValue.isNotEmpty) {
+    final List<String> parts = selectedValue.split(':');
+    if (parts.length == 2) {
+      final int hours = int.tryParse(parts[0]) ?? 0;
+      final int minutes = int.tryParse(parts[1]) ?? 0;
+
+      final int adjustedHours =
+          (hours >= 1 && hours <= 12) ? hours : hours % 12;
+
+      final DateTime dateTime = DateTime(1, 1, 1, adjustedHours, minutes);
+      return dateTime;
+    }
+  }
+
+  return null;
 }

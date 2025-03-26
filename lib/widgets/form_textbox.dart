@@ -1,6 +1,10 @@
 import 'package:easy_formz/easy_formz.dart';
 
+/// A widget that displays a text input form field.
 class FormTextBox extends StatefulWidget {
+  /// Creates a [FormTextBox] widget.
+  ///
+  /// The [config] and [onChanged] parameters are required.
   FormTextBox({
     super.key,
     required this.config,
@@ -8,8 +12,13 @@ class FormTextBox extends StatefulWidget {
     EasyFormzTheme? theme,
   }) : theme = theme ?? EasyFormzTheme();
 
+  /// The configuration for the form field.
   final FormConfig config;
+
+  /// The theme for the form field.
   final EasyFormzTheme theme;
+
+  /// Callback when the form field value changes.
   final Function(dynamic value) onChanged;
 
   @override
@@ -49,10 +58,9 @@ class _FormTextBoxState extends State<FormTextBox> {
               border: const OutlineInputBorder(),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color:
-                      widget.config.props.isWarned
-                          ? Colors.red.withOpacity(0.6)
-                          : widget.theme.borderColor,
+                  color: widget.config.props.isWarned
+                      ? Colors.red.withOpacity(0.6)
+                      : widget.theme.borderColor,
                 ),
               ),
             ),

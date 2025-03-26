@@ -1,15 +1,25 @@
 import 'package:easy_formz/easy_formz.dart';
 
+/// A widget that displays a group of radio buttons based on the provided configuration.
 class FormRadio extends StatelessWidget {
-   FormRadio({
+  /// Creates a [FormRadio] widget.
+  ///
+  /// The [config] and [onChanged] parameters must not be null.
+  /// The [theme] parameter is optional and defaults to [EasyFormzTheme] if not provided.
+  FormRadio({
     super.key,
     required this.config,
     required this.onChanged,
-     EasyFormzTheme? theme,
+    EasyFormzTheme? theme,
   }) : theme = theme ?? EasyFormzTheme();
 
+  /// The configuration for the form radio buttons.
   final FormConfig config;
+
+  /// The theme to be used for styling the radio buttons.
   final EasyFormzTheme theme;
+
+  /// Callback function to be called when the value of a radio button changes.
   final Function(dynamic value) onChanged;
 
   @override
@@ -22,6 +32,7 @@ class FormRadio extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
+          /// Displays the label for the radio button group.
           FormLabel(
             label: config.label,
             theme: theme,
@@ -68,6 +79,7 @@ class FormRadio extends StatelessWidget {
                 )
                 .toList(),
           ),
+          /// Displays a warning label if there is a warning.
           FormWarningLabel(
             theme: theme,
             isWarned: config.props.isWarned,

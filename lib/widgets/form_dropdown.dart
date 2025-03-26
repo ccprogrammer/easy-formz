@@ -38,7 +38,7 @@ class FormDropdown extends StatelessWidget {
                             value: config.value,
                             child: Text(value.label),
                             onTap: () {
-                              onChanged(value);
+                              onChanged(value.value);
                             },
                           ),
                         )

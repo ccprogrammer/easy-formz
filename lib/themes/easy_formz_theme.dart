@@ -10,6 +10,7 @@ class EasyFormzTheme {
   final Color warningColor;
   final Color iconColor;
   final double iconSize;
+  final String warningText;
 
   EasyFormzTheme({
     this.labelTextStyle = const TextStyle(
@@ -24,5 +25,6 @@ class EasyFormzTheme {
     this.warningColor = Colors.red,
     this.iconColor = Colors.black54,
     this.iconSize = 24,
+    this.warningText = 'Please fill the form correctly',
   });
 }

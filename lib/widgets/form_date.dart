@@ -1,5 +1,11 @@
 import 'package:easy_formz/easy_formz.dart';
+
+/// A widget that displays a date picker form field.
 class FormDate extends StatelessWidget {
+  /// Creates a [FormDate] widget.
+  ///
+  /// The [config] and [onChanged] parameters must not be null.
+  /// The [theme] parameter is optional and defaults to [EasyFormzTheme].
   FormDate({
     super.key,
     required this.config,
@@ -7,8 +13,13 @@ class FormDate extends StatelessWidget {
     EasyFormzTheme? theme,
   }) : theme = theme ?? EasyFormzTheme();
 
+  /// The configuration for the form field.
   final FormConfig config;
+
+  /// The theme for the form field.
   final EasyFormzTheme theme;
+
+  /// The callback that is called when the date is changed.
   final Function(dynamic value) onChanged;
 
   @override
@@ -16,7 +27,7 @@ class FormDate extends StatelessWidget {
     final String selectedValue = config.value ?? '';
 
     final String convertedDate =
-        selectedValue.isNotEmpty ? convertDate(selectedValue) : '';
+        selectedValue.isNotEmpty ? _convertDate(selectedValue) : '';
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -24,6 +35,7 @@ class FormDate extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
+          /// Displays the label for the form field.
           FormLabel(
             label: config.label,
             theme: theme,
@@ -74,5 +86,46 @@ class FormDate extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+String _convertDate(String selectedValue) {
+  if (selectedValue.isNotEmpty) {
+    final DateTime dateTime = DateTime.parse(selectedValue);
+    final String month =
+        (() {
+          switch (dateTime.month) {
+            case 1:
+              return 'January';
+            case 2:
+              return 'February';
+            case 3:
+              return 'March';
+            case 4:
+              return 'April';
+            case 5:
+              return 'May';
+            case 6:
+              return 'June';
+            case 7:
+              return 'July';
+            case 8:
+              return 'August';
+            case 9:
+              return 'September';
+            case 10:
+              return 'October';
+            case 11:
+              return 'November';
+            case 12:
+              return 'December';
+            default:
+              return '';
+          }
+        })();
+    final String formattedDate = '$month ${dateTime.day}, ${dateTime.year}';
+    return formattedDate;
+  } else {
+    return '';
   }
 }

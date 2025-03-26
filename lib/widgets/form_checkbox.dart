@@ -1,6 +1,10 @@
 import 'package:easy_formz/easy_formz.dart';
 
+/// A widget that displays a checkbox form field.
 class FormCheckbox extends StatelessWidget {
+  /// Creates a [FormCheckbox] widget.
+  ///
+  /// The [config] and [onChanged] parameters are required.
   FormCheckbox({
     super.key,
     required this.config,
@@ -8,10 +12,16 @@ class FormCheckbox extends StatelessWidget {
     EasyFormzTheme? theme,
   }) : theme = theme ?? EasyFormzTheme();
 
+  /// The configuration for the form field.
   final FormConfig config;
+
+  /// The theme for the form field.
   final EasyFormzTheme theme;
+
+  /// Callback when the form field value changes.
   final Function(dynamic value) onChanged;
 
+  /// Checks if there are no options for the checkbox.
   bool get noOptions =>
       config.props.options == null || config.props.options!.isEmpty;
 
@@ -79,45 +89,44 @@ class FormCheckbox extends StatelessWidget {
             isRequired: config.props.isRequired,
           ),
           Column(
-            children:
-                config.props.options!
-                    .map(
-                      (e) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              height: 24.0,
-                              width: 24.0,
-                              child: Checkbox(
-                                value: e.value == selectedValue,
-                                activeColor: theme.valueColor,
-                                side: WidgetStateBorderSide.resolveWith(
-                                  (states) => BorderSide(
-                                    width: theme.borderWidth,
-                                    color: theme.borderColor,
-                                  ),
-                                ),
-                                onChanged: (value) {
-                                  onChanged(e.value);
-                                },
+            children: config.props.options!
+                .map(
+                  (e) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: 24.0,
+                          width: 24.0,
+                          child: Checkbox(
+                            value: e.value == selectedValue,
+                            activeColor: theme.valueColor,
+                            side: WidgetStateBorderSide.resolveWith(
+                              (states) => BorderSide(
+                                width: theme.borderWidth,
+                                color: theme.borderColor,
                               ),
                             ),
-                            const SizedBox(width: 8),
-                            GestureDetector(
-                              onTap: () {
-                                onChanged(e.value);
-                              },
-                              child: Text(
-                                e.label,
-                                style: theme.optionTextStyle,
-                              ),
-                            ),
-                          ],
+                            onChanged: (value) {
+                              onChanged(e.value);
+                            },
+                          ),
                         ),
-                      ),
-                    )
-                    .toList(),
+                        const SizedBox(width: 8),
+                        GestureDetector(
+                          onTap: () {
+                            onChanged(e.value);
+                          },
+                          child: Text(
+                            e.label,
+                            style: theme.optionTextStyle,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+                .toList(),
           ),
           FormWarningLabel(theme: theme, isWarned: config.props.isWarned),
         ],

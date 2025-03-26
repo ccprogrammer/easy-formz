@@ -1,6 +1,10 @@
 import 'package:easy_formz/easy_formz.dart';
 
+/// A widget that displays a textarea form field.
 class FormTextArea extends StatefulWidget {
+  /// Creates a [FormTextArea] widget.
+  ///
+  /// The [config] and [onChanged] parameters are required.
   FormTextArea({
     super.key,
     required this.config,
@@ -8,8 +12,13 @@ class FormTextArea extends StatefulWidget {
     EasyFormzTheme? theme,
   }) : theme = theme ?? EasyFormzTheme();
 
+  /// The configuration for the form field.
   final FormConfig config;
+
+  /// The theme for the form field.
   final EasyFormzTheme theme;
+
+  /// Callback when the form field value changes.
   final Function(dynamic value) onChanged;
 
   @override
@@ -51,10 +60,9 @@ class _FormTextAreaState extends State<FormTextArea> {
               border: const OutlineInputBorder(),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color:
-                      widget.config.props.isWarned
-                          ? widget.theme.warningColor
-                          : widget.theme.borderColor,
+                  color: widget.config.props.isWarned
+                      ? widget.theme.warningColor
+                      : widget.theme.borderColor,
                 ),
               ),
             ),

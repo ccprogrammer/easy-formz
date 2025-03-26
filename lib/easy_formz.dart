@@ -7,9 +7,6 @@ export 'dart:math';
 // Controllers
 export 'controller/easy_formz_controller.dart';
 
-// Functions
-export 'functions/date_converter.dart';
-
 // Themes
 export 'themes/easy_formz_theme.dart';
 

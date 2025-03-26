@@ -108,7 +108,10 @@ class _FormScreenState extends State<FormScreen> {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(child: EasyFormz(controller: controller)),
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: EasyFormz(controller: controller),
+        ),
       ),
     );
   }
@@ -178,6 +181,20 @@ final availableForms = FormPage(
       formKey: 'dynamic_input_key',
       label: 'Test Form Input',
       props: FormProps(isRequired: true),
+    ),
+    FormConfig(
+      id: '702',
+      type: 'dropdown',
+      formKey: 'dynamic_dropdown_key',
+      label: 'Test Form Dropdown',
+      props: FormProps(
+        isRequired: true,
+        options: [
+          FormOption(label: 'Option One', value: 'ONE'),
+          FormOption(label: 'Option Two', value: 'TWO'),
+          FormOption(label: 'Option Three', value: 'Three'),
+        ],
+      ),
     ),
     FormConfig(
       id: '432',
