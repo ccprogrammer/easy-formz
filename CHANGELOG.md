@@ -1,3 +1,3 @@
-## 1.1.3
+## 1.1.4
 
-- Updated the documentation
+- Updated readme.md

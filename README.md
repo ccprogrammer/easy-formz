@@ -15,6 +15,7 @@ The purpose of this package is to facilitate the creation of dynamic forms based
   - [Customizing the Easy Form Theme](#customizing-the-easy-form-theme)
 - [Contributing](#contributing)
 - [License](#license)
+- [Support Me](#support-me)
 
 ## Available Form Types
 
@@ -287,3 +288,9 @@ Contributions are welcome! Please open an issue or submit a pull request if you 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Support Me
+
+If you find this package helpful and want to support its development, consider making a donation. Thank you for your support!
+
+[![Support via PayPal](https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_150x38.png)](https://www.paypal.com/paypalme/Lubiancaa)
